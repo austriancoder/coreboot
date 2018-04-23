@@ -13,6 +13,8 @@
 ## GNU General Public License for more details.
 ##
 
+bootblock-y += bootblock.c
+
 romstage-y += pei_data.c
 
 ramstage-y += pei_data.c
