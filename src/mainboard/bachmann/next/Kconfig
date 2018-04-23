@@ -1,0 +1,53 @@
+config BOARD_BACHMANN_NEXT
+	def_bool n
+	select BOARD_ROMSIZE_KB_16384
+	select HAVE_ACPI_TABLES
+	select SOC_INTEL_SKYLAKE
+	# Workaround for EC/KBC IRQ1
+	select SERIRQ_CONTINUOUS_MODE
+	select MAINBOARD_USES_FSP2_0
+	select SPD_READ_BY_WORD
+
+if BOARD_BACHMANN_NEXT
+
+config IRQ_SLOT_COUNT
+	int
+	default 18
+
+config MAINBOARD_DIR
+	string
+	default "bachmann/next"
+
+config MAINBOARD_PART_NUMBER
+	string
+	default "next"
+
+config DEVICETREE
+	string
+	default "devicetree.cb"
+
+config MAX_CPUS
+	int
+	default 8
+
+config DIMM_MAX
+	int
+	default 1
+
+config DIMM_SPD_SIZE
+	int
+	default 512
+
+config CPU_MICROCODE_CBFS_LEN
+	hex
+	default 0x18000
+
+config CPU_MICROCODE_CBFS_LOC
+	hex
+	default 0xFFE115A0
+
+config CBFS_SIZE
+	hex
+	default 0x5c0000
+
+endif

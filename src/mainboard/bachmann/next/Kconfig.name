@@ -1,0 +1,2 @@
+config BOARD_BACHMANN_NEXT
+	bool "next"
