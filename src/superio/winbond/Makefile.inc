@@ -14,6 +14,7 @@
 ##
 
 ## include generic winbond pre-ram stage driver
+bootblock-$(CONFIG_SUPERIO_WINBOND_COMMON_ROMSTAGE) += common/early_init.c
 romstage-$(CONFIG_SUPERIO_WINBOND_COMMON_ROMSTAGE) += common/early_init.c
 
 subdirs-y += w83627dhg
